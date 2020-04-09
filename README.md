@@ -28,9 +28,12 @@ mm
 3     3  1.73
 ```
 
+The below will create 5 vectors with n=10 elements, mean=<the piped input value>, sd=1 then compute the mean of each vector:
+
 ```
 1:5 %>%
 +   future_map(rnorm, n=10) %>%
 +   future_map_dbl(mean)
 [1] 1.539254 1.736080 2.341536 3.895655 4.642486
 ```
+
