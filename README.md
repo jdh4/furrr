@@ -62,7 +62,16 @@ $ R
 
 # mclapply
 
-This uses a forking approach as opposed to sockets (like snow).
+This uses a forking approach as opposed to sockets (like snow):
+
+```
+‘mclapply’ is a parallelized version of ‘lapply’, it returns a
+     list of the same length as ‘X’, each element of which is the
+     result of applying ‘FUN’ to the corresponding element of ‘X’.
+
+     It relies on forking and hence is not available on Windows unless
+     ‘mc.cores = 1’.
+```
 
 ```
 > library(parallel)
