@@ -91,3 +91,20 @@ This uses a forking approach as opposed to sockets (like snow):
    user  system elapsed 
   0.802   0.463   0.293 
 ```
+
+```
+> system.time(l1 <- unlist(mclapply(X=13:23, function(x) {rnorm(1000000);print(x);}, mc.cores=1)))
+[1] 13
+[1] 14
+[1] 15
+[1] 16
+[1] 17
+[1] 18
+[1] 19
+[1] 20
+[1] 21
+[1] 22
+[1] 23
+   user  system elapsed 
+  0.685   0.041   0.727 
+```
