@@ -108,3 +108,11 @@ This uses a forking approach as opposed to sockets (like snow):
    user  system elapsed 
   0.685   0.041   0.727 
 ```
+
+```
+> l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=1))
+> str(l1)
+ num [1:10000000] -0.473 -3.05 -0.935 -3.109 -0.185 ...
+> is.vector(l1) && is.atomic(l1)
+[1] TRUE
+```
