@@ -37,3 +37,25 @@ The below will create 5 vectors with n=10 elements, mean=<the piped input value>
 [1] 1.539254 1.736080 2.341536 3.895655 4.642486
 ```
 
+# Available packages and currently loaded packages
+
+```
+> library()$results[,1]
+ [1] "base"         "boot"         "class"        "cluster"      "codetools"   
+ [6] "compiler"     "datasets"     "foreign"      "graphics"     "grDevices"   
+[11] "grid"         "HiddenMarkov" "KernSmooth"   "lattice"      "MASS"        
+[16] "Matrix"       "methods"      "mgcv"         "nlme"         "nnet"        
+[21] "parallel"     "rpart"        "spatial"      "splines"      "stats"       
+[26] "stats4"       "survival"     "tcltk"        "tools"        "utils"
+```
+
+or just use `library()`.
+
+To see currently loaded packages():
+
+```
+$ R
+> (.packages())
+[1] "stats"     "graphics"  "grDevices" "utils"     "datasets"  "methods"  
+[7] "base"     
+```
