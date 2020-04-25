@@ -113,6 +113,44 @@ This uses a forking approach as opposed to sockets (like snow):
 > l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=1))
 > str(l1)
  num [1:10000000] -0.473 -3.05 -0.935 -3.109 -0.185 ...
+> length(l1)
+[1] 10000000
 > is.vector(l1) && is.atomic(l1)
 [1] TRUE
+```
+
+# parallel (snow)
+
+`snow` and `multicore` were subsumed into parallel.
+
+```
+> cl <- makeCluster(4)
+> clusterCall(cl, function() {Sys.info()["nodename"]})
+[[1]]
+ nodename 
+"adroit4" 
+
+[[2]]
+ nodename 
+"adroit4" 
+
+[[3]]
+ nodename 
+"adroit4" 
+
+[[4]]
+ nodename 
+"adroit4" 
+
+> clusterApply(cl, c('A', 'B', 'C'), function(x) {paste("Executor", x, "ready.")})
+[[1]]
+[1] "Executor A ready."
+
+[[2]]
+[1] "Executor B ready."
+
+[[3]]
+[1] "Executor C ready."
+
+> stopCluster(cl)
 ```
