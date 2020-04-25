@@ -158,6 +158,7 @@ This uses a forking approach as opposed to sockets (like snow):
 # foreach and doParallel
 
 ```
+> install.packages(c("foreach", "doParallel"))
 > library(foreach)
 > library(doParallel)
 Loading required package: iterators
