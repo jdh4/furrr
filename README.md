@@ -174,3 +174,51 @@ Loading required package: parallel
  80.042  41.608  33.690
 > stopImplicitCluster()
 ```
+
+# Documentation
+
+> ?parallel
+> help(package=parallel)
+
+> lsf.str("parallel")
+> lsf.str("package:parallel")
+clusterApply : function (cl = NULL, x, fun, ...)  
+clusterApplyLB : function (cl = NULL, x, fun, ...)  
+clusterCall : function (cl = NULL, fun, ...)  
+clusterEvalQ : function (cl = NULL, expr)  
+clusterExport : function (cl = NULL, varlist, envir = .GlobalEnv)  
+clusterMap : function (cl = NULL, fun, ..., MoreArgs = NULL, RECYCLE = TRUE, SIMPLIFY = FALSE, 
+    USE.NAMES = TRUE, .scheduling = c("static", "dynamic"))  
+clusterSetRNGStream : function (cl = NULL, iseed = NULL)  
+clusterSplit : function (cl = NULL, seq)  
+detectCores : function (all.tests = FALSE, logical = TRUE)  
+getDefaultCluster : function ()  
+makeCluster : function (spec, type = getClusterOption("type"), ...)  
+makeForkCluster : function (nnodes = getOption("mc.cores", 2L), ...)  
+makePSOCKcluster : function (names, ...)  
+mc.reset.stream : function ()  
+mcaffinity : function (affinity = NULL)  
+mccollect : function (jobs, wait = TRUE, timeout = 0, intermediate = FALSE)  
+mclapply : function (X, FUN, ..., mc.preschedule = TRUE, mc.set.seed = TRUE, mc.silent = FALSE, 
+    mc.cores = getOption("mc.cores", 2L), mc.cleanup = TRUE, mc.allow.recursive = TRUE, 
+    affinity.list = NULL)  
+mcMap : function (f, ...)  
+mcmapply : function (FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE, 
+    mc.preschedule = TRUE, mc.set.seed = TRUE, mc.silent = FALSE, mc.cores = getOption("mc.cores", 
+        2L), mc.cleanup = TRUE, affinity.list = NULL)  
+mcparallel : function (expr, name, mc.set.seed = TRUE, silent = FALSE, mc.affinity = NULL, 
+    mc.interactive = FALSE, detached = FALSE)  
+nextRNGStream : function (seed)  
+nextRNGSubStream : function (seed)  
+parApply : function (cl = NULL, X, MARGIN, FUN, ..., chunk.size = NULL)  
+parCapply : function (cl = NULL, x, FUN, ..., chunk.size = NULL)  
+parLapply : function (cl = NULL, X, fun, ..., chunk.size = NULL)  
+parLapplyLB : function (cl = NULL, X, fun, ..., chunk.size = NULL)  
+parRapply : function (cl = NULL, x, FUN, ..., chunk.size = NULL)  
+parSapply : function (cl = NULL, X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE, chunk.size = NULL)  
+parSapplyLB : function (cl = NULL, X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE, chunk.size = NULL)  
+pvec : function (v, FUN, ..., mc.set.seed = TRUE, mc.silent = FALSE, mc.cores = getOption("mc.cores", 
+    2L), mc.cleanup = TRUE)  
+setDefaultCluster : function (cl = NULL)  
+splitIndices : function (nx, ncl)  
+stopCluster : function (cl = NULL)
