@@ -59,3 +59,26 @@ $ R
 [1] "stats"     "graphics"  "grDevices" "utils"     "datasets"  "methods"  
 [7] "base"     
 ```
+
+# mclapply
+
+This uses a forking approach as opposed to sockets (like snow).
+
+```
+> library(parallel)
+> system.time(l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=1)))
+   user  system elapsed 
+  0.708   0.070   0.794 
+> system.time(l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=2)))
+   user  system elapsed 
+  0.771   0.307   0.638 
+> system.time(l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=4)))
+   user  system elapsed 
+  0.797   0.371   0.425 
+> system.time(l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=8)))
+   user  system elapsed 
+  0.797   0.405   0.294 
+> system.time(l1 <- unlist(mclapply(1:10, function(x) {rnorm(1000000)}, mc.cores=16)))
+   user  system elapsed 
+  0.802   0.463   0.293 
+```
