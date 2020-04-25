@@ -154,3 +154,22 @@ This uses a forking approach as opposed to sockets (like snow):
 
 > stopCluster(cl)
 ```
+
+# foreach and doParallel
+
+```
+> library(foreach)
+> library(doParallel)
+Loading required package: iterators
+Loading required package: parallel
+> registerDoParallel(cores=4)
+> system.time(l4p <- foreach(i=1:4, .combine='c') %dopar% rnorm(250000000))
+   user  system elapsed 
+ 75.338  29.957  41.277 
+> stopImplicitCluster()
+> registerDoParallel(cores=8)
+> system.time(l4p <- foreach(i=1:8, .combine='c') %dopar% rnorm(125000000))
+   user  system elapsed 
+ 80.042  41.608  33.690
+> stopImplicitCluster()
+```
