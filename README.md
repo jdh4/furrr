@@ -2,6 +2,10 @@
 
 This code takes 18 seconds using cpus-per-task=4 compared to 41 seconds with 1 core:
 
+<a target="_blank" href="https://colab.research.google.com/github/jdh4/furrr/blob/master/getting_started_machine_linearning.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 ```R
 library(furrr)
 plan(multiprocess)
